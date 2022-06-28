@@ -67,7 +67,7 @@ const option = {
   },
   series: [
     {
-      symbol: "image://http://127.0.0.1:5500/chart_mark_icon.svg",
+      symbol: "image:///chart_mark_icon.svg",
       symbolSize: 15,
       name: "Highest",
       type: "line",
