@@ -127,13 +127,6 @@ option = {
     scale: true,
     show: false,
   },
-  dataZoom: [
-    {
-      type: "inside",
-      start: 50,
-      end: 100,
-    },
-  ],
   series: [
     {
       name: "카카오",
