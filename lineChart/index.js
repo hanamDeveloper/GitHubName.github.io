@@ -1,8 +1,22 @@
+// import { currentOS } from "../util/getOS";
+
 const dom = document.getElementById("chart-container");
 const myChart = echarts.init(dom, null, {
   renderer: "canvas",
   useDirtyRect: false,
 });
+
+const markPointLabelFontSize = (os) => {
+  if (os === "ios") {
+    return 24;
+  }
+
+  if (os === "android") {
+    return 12;
+  }
+};
+
+// console.log("currentOs", currentOS);
 
 const option = {
   tooltip: {
@@ -67,6 +81,7 @@ const option = {
     type: "value",
     show: false,
   },
+  backgroundColor: '#FAFAFB',
   series: [
     {
       symbol: "image:///chart_mark_icon.svg",
@@ -94,11 +109,11 @@ const option = {
         label: {
           show: true,
           position: "outside",
-          fontSize: 12,
+          fontSize: markPointLabelFontSize(),
           color: "#8f8e8e",
           verticalAlign: "bottom",
           textBorderColor: "black",
-          //   backgroundColor: "#f1f1f1",
+          backgroundColor: "#FAFAFB",
           padding: 5,
           borderRadius: 10,
           verticalAlign: 20,

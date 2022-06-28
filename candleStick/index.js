@@ -1,3 +1,5 @@
+import { mobileOS } from "../util/getOS.js";
+
 var dom = document.getElementById("chart-container");
 var myChart = echarts.init(dom, null, {
   renderer: "canvas",
@@ -11,6 +13,8 @@ const upColor = "red";
 const upBorderColor = "red";
 const downColor = "blue";
 const downBorderColor = "blue";
+
+console.log("mobile", mobileOS);
 // Each item: open，close，lowest，highest
 const data0 = splitData([
   ["2013/1/24", 2320.26, 2320.26, 2287.3, 2362.94],
@@ -116,19 +120,15 @@ option = {
     type: "category",
     data: data0.categoryData,
     show: false,
-    boundatyGap: ["1%", "1%"],
-    nameGap: 10,
-    // axisLine: { onZero: false },
-    // splitLine: { show: false },
-    // min: "dataMin",
-    // max: "dataMax",
   },
   yAxis: {
     scale: true,
     show: false,
   },
+  
   series: [
     {
+      barWidth: 14,
       name: "카카오",
       type: "candlestick",
       data: data0.values,
