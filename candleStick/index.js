@@ -1,4 +1,5 @@
-import { mobileOS } from "../util/getOS.js";
+import { currentOS, mobileOS } from "../util/getOS.js";
+import { markPointLabelFontSize } from "../util/chartUtils.js";
 
 var dom = document.getElementById("chart-container");
 var myChart = echarts.init(dom, null, {
@@ -9,12 +10,10 @@ var app = {};
 
 var option;
 
-const upColor = "red";
-const upBorderColor = "red";
-const downColor = "blue";
-const downBorderColor = "blue";
-
-console.log("mobile", mobileOS);
+const upColor = "#FF3B30";
+const upBorderColor = "#FF3B30";
+const downColor = "#0137FF";
+const downBorderColor = "#0137FF";
 // Each item: open，close，lowest，highest
 const data0 = splitData([
   ["2013/1/24", 2320.26, 2320.26, 2287.3, 2362.94],
@@ -125,7 +124,8 @@ option = {
     scale: true,
     show: false,
   },
-  
+
+  backgroundColor: "#FAFAFB",
   series: [
     {
       barWidth: 14,
@@ -139,20 +139,12 @@ option = {
         borderColor0: downBorderColor,
       },
       markPoint: {
-        symbolSize: 5,
-        symbol: "circle",
-        // symbolOffset: [0, 20],
+        symbolSize: 0,
         label: {
           show: true,
           position: "outside",
-          fontSize: 8,
+          fontSize: markPointLabelFontSize(currentOS),
           color: "#8f8e8e",
-          verticalAlign: "bottom",
-          textBorderColor: "black",
-          backgroundColor: "#f1f1f1",
-          padding: 5,
-          borderRadius: 10,
-          verticalAlign: 20,
           formatter: function (param) {
             const getSymbolName = () => {
               if ("max" === param.data.type) return "최고";
@@ -169,14 +161,14 @@ option = {
             name: "highest value",
             type: "max",
             valueDim: "highest",
-            symbolOffset: [0, -15],
+            symbolOffset: [0, -10],
             label: { color: "red" },
           },
           {
             name: "lowest value",
             type: "min",
             valueDim: "lowest",
-            symbolOffset: [0, 5],
+            symbolOffset: [0, 25],
             label: { color: "blue" },
           },
         ],
