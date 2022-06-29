@@ -53,7 +53,7 @@ button:visited {
   color: #b3bec4;
   font-family: "Pretendard";
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 13px;
   line-height: 20px;
   width: 52px;
@@ -62,8 +62,10 @@ button:visited {
 
 .select-month.selected {
   color: #0b1024;
+  font-weight: 400;
   background: white;
-  filter: drop-shadow(1px 2px 4px rgba(11, 16, 36, 0.08));
+  box-shadow: 2px 3px 4px rgba(11, 16, 36, 0.08);
+  filter: drop-shadow();
 }
 
 .select-month + .select-month {
