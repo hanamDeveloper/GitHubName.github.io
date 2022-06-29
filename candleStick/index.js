@@ -94,10 +94,6 @@ function splitData(rawData) {
 option = {
   tooltip: {
     trigger: "axis",
-    borderWidth: 10,
-    textStyle: {
-      fontSize: 24,
-    },
   },
   grid: {
     left: "10%",
@@ -162,7 +158,6 @@ option = {
           },
         ],
         tooltip: {
-          fontSize: 200,
           formatter: function (param) {
             return param.name + "<br>" + (param.data.coord || "");
           },
