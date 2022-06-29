@@ -1,6 +1,6 @@
 export const markPointLabelFontSize = (os) => {
     if (os === "ios") {
-      return 24;
+      return 12;
     }
   
     if (os === "android") {
