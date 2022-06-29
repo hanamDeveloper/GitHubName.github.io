@@ -62,7 +62,7 @@ button:visited {
 
 .select-month.selected {
   color: #0b1024;
-  font-weight: 400;
+  font-weight: 500;
   background: white;
   /* box-shadow: ; */
   filter: drop-shadow(1px 2px 4px rgba(11, 16, 36, 0.08));
