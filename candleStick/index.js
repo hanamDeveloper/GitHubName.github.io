@@ -113,7 +113,6 @@ option = {
   backgroundColor: "#FAFAFB",
   series: [
     {
-      barWidth: 14,
       name: "카카오",
       type: "candlestick",
       data: data0.values,
