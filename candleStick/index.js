@@ -136,7 +136,7 @@ option = {
             };
 
             return (
-              param !== null && `${getSymbolName()} ${Math.round(param.value)}`
+              param !== null && `${getSymbolName()} ${Math.round(param.value).toLocaleString('en')}`
             );
           },
         },
