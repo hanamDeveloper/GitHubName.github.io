@@ -1,10 +1,48 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
-  #chart-container {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  outline: 0;
+}
+
+#chart-container {
+  position: relative;
+  height: calc(100vh - 32px - 10px);
+  overflow: hidden;
+}
+
+.select-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  width: 100%;
+  margin-top: 10px;
+  background: white;
+}
+
+.button-area {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 10px;
+  background: #FAFAFB;
+  padding: 4px;
+  width: 172px;
+}
+
+.select-month {
+  width: 52px;
+  height: 24px;
+  border-radius: 10px;
+  background: white;
+}
+
+.select-month + .select-month  {
+    margin-left: 4px;
+}
