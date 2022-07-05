@@ -136,7 +136,10 @@ option = {
             };
 
             return (
-              param !== null && `${getSymbolName()} ${Math.round(param.value).toLocaleString('en')}`
+              param !== null &&
+              `${getSymbolName()} ${Math.round(param.value).toLocaleString(
+                "en"
+              )}`
             );
           },
         },
@@ -188,3 +191,7 @@ if (option && typeof option === "object") {
 }
 
 window.addEventListener("resize", myChart.resize);
+
+const getStockInfo = (stockItem) => {
+  dom.innerHTML = `<div>${stockItem}</div>`
+};
